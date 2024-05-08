@@ -20,3 +20,17 @@ app.get('/api/notes/:id', (req, res) => {
     });
 });
 
+// Post route route to add new notes to DB
+app.post('/api/notes', (req, res) => {
+    const newNote = req.body;
+    newNote.id = (data.lenght).toString();
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+        if (err) throw err;
+        const notes = json.parse(data);
+        notes.push (newNote);
+        fs.writeFile('./db/db.json', json.stringify(notes), (err) => {
+            if (err) throw err;
+            res.json(notes);
+        })
+    })
+})
