@@ -1,16 +1,14 @@
 const fs = require('fs');
-const express = require('express');
-const { json } = require('body-parser');
-const app = express();
+const app = require('express').Router();;
 //get Route to retrieve all notes from data base 
-app.get('/api/notes', (req, res) => {
+app.get('/notes', (req, res) => {
     fs.readFile('./db/db.json', 'utf8', (err, data) => {
         if (err) throw err;
-        res.json(json.parse(data));
+        res.json(JSON.parse(data));
     });
 });
 // GET route to retrieve a single note by its ID
-app.get('/api/notes/:id', (req, res) => {
+app.get('/notes/:id', (req, res) => {
     fs.readFile('./db/db.json', 'utf8', (err, data) => {
         if (err) throw err;
         const notes = json.parse(data);
@@ -21,12 +19,12 @@ app.get('/api/notes/:id', (req, res) => {
 });
 
 // Post route route to add new notes to DB
-app.post('/api/notes', (req, res) => {
+app.post('/notes', (req, res) => {
     const newNote = req.body;
-    newNote.id = (data.lenght).toString();
+    newNote.id = (data.length).toString();
     fs.readFile('./db/db.json', 'utf8', (err, data) => {
         if (err) throw err;
-        const notes = json.parse(data);
+        const notes = JSON.parse(data);
         notes.push (newNote);
         fs.writeFile('./db/db.json', json.stringify(notes), (err) => {
             if (err) throw err;
@@ -34,3 +32,5 @@ app.post('/api/notes', (req, res) => {
         })
     })
 })
+
+module.exports = app
