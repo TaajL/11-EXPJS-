@@ -7,6 +7,7 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 
 ## Deployed Application 
 [Heroku Deployment](https://git.heroku.com/note-taker-11111.git)
+
 [Github Repo link](https://github.com/TaajL/11-EXPJS-)
 
 
