@@ -18,7 +18,7 @@ app.use('/api', api);
 
 // GET Route for feedback page
 app.get('/notes', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/notes.html'))
+  res.sendFile(path.join(__dirname, 'public/notes.html'))
 );
 
 // Wildcard route to direct users to a 404 page

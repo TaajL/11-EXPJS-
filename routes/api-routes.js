@@ -21,12 +21,12 @@ app.get('/notes/:id', (req, res) => {
 // Post route route to add new notes to DB
 app.post('/notes', (req, res) => {
     const newNote = req.body;
-    newNote.id = (data.length).toString();
+   // newNote.id = (data.length).toString();
     fs.readFile('./db/db.json', 'utf8', (err, data) => {
         if (err) throw err;
         const notes = JSON.parse(data);
         notes.push (newNote);
-        fs.writeFile('./db/db.json', json.stringify(notes), (err) => {
+        fs.writeFile('./db/db.json', JSON.stringify(notes), (err) => {
             if (err) throw err;
             res.json(notes);
         })
