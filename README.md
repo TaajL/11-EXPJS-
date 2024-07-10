@@ -6,12 +6,12 @@ I WANT to be able to write and save notes
 SO THAT I can organize my thoughts and keep track of tasks I need to complete
 
 ## Deployed Application 
-[Heroku Deployment](https://git.heroku.com/note-taker-11111.git)
+[Heroku Deployment](https://note-taker-11111-85c6ef1c84a0.herokuapp.com/)
 
 [Github Repo link](https://github.com/TaajL/11-EXPJS-)
 
 
- ![screenshot](Screenshot%202024-04-11%20at%2012.30.54 PM.png)
+ ![screenshot](public/assets/expnote.png)
 
 ## Installation 
 Node.js is needed to be able to run this code in the terminal.
